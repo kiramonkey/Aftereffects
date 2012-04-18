@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="file:///Macintosh/Users/luisacovaria/Downloads/intro.css"/>
+    <link rel="stylesheet" href="file:///Macintosh/Users/luisacovaria/Downloads/css/jd.gallery.css" type="text/css" media="screen" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="file:///Macintosh/Users/luisacovaria/Downloads/mootools-1.2.5-core-yc.js" type="text/javascript"></script>
+    <script src="file:///Macintosh/Users/luisacovaria/Downloads/jd.gallery.js" type="text/javascript"></script>
+    <script src="file:///Macintosh/Users/luisacovaria/Downloads/mootools-1.2-more.js" type="text/javascript"/></script>
+</head>
+<body>
+<body bgcolor="0B0101">
+    <audio autoplay="autoplay">
+        <source src="intro.mp3" type="audio/mp3" />
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div id="content_container">
+        <div id="myGallery">
+            <div id="image1" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/0.png" class="full" />
+            </div>
+            <div id="image2" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/1.png" class="full" />
+            </div>
+             <div id="image3" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/2.png" class="full" />
+            </div>
+            <div id="image4" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/3.png" class="full" />
+            </div>
+             <div id="image5" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/4.png" class="full" />
+            </div>
+            <div id="image6" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/5.png" class="full" />
+            </div>
+             <div id="image7" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/6.png" class="full" />
+            </div>
+            <div id="image8" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/7.png" class="full" />
+            </div>
+             <div id="image9" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/8.png" class="full" />
+            </div>
+            <div id="image10" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/9.png" class="full" />
+            </div>
+             <div id="image11" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/10.png" class="full" />
+            </div>
+            <div id="image12" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/11.png" class="full" />
+            </div>
+             <div id="image13" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/12.png" class="full" />
+            </div>
+            <div id="image14" class="imageElement">
+                <img src="http://itp.nyu.edu/~lfc267/images/13.png" class="full" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+$(function(){
+    images = Array( '#image1', '#image2' , '#image3' , '#image4', '#image5', '#image6', '#image7', '#image8', '#image9', '#image10', '#image11', '#image12', '#image13', '#image14');
+    i = 0;
+    var time = 900;
+
+    $('.imageElement').hide();
+
+    switcheroo = function switchImages(){
+        if(i === 0){
+            $(images[13]).fadeOut();
+            $(images[0]).fadeIn(time);
+            i++
+        }
+        else if (i != images.length - 1){
+            $(images[i-1]).fadeOut(time);
+            $(images[i]).delay(1000).fadeIn(time); 
+            i++;            
+        } 
+        else if (i === 13){
+            $(images[13]).fadeOut();
+            i = 0;
+            window.location = 'http://stu.itp.nyu.edu/~pmd299/connectedDoc/video_collage.htm'
+        } 
+        console.log(i);
+    }
+
+    setInterval(switcheroo, 4000);
+});
+
+/*
+        $().fadeIn(4000);
+
+        function startGallery() {
+            var myGallery = new gallery($('myGallery'), {
+            timed: true,
+            showArrows: true,
+            showCarousel: false,
+            embedLinks: false
+            });
+        }
+        window.addEvent('domready', startGallery);
+
+*/
+</script>
+
+</body>
+</html>
